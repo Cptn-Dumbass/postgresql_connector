@@ -36,9 +36,14 @@ try:
 
     print('connection established')
 
+    table = input("Table Name: ")
+
     with conn.cursor() as cur:
-        # Example query: SELECT * FROM names LIMIT 5;
-        cur.execute("SELECT * FROM names LIMIT 5;")
+        # Example query: SELECT * FROM stuff LIMIT 5;
+
+        #TEMPORARY, THIS WILL BE FIXED SOON!!!
+        query = f"SELECT * FROM {table} LIMIT 5;"
+        cur.execute(query)
         
         data = cur.fetchall()
         print(f"Data fetched: {data}")
