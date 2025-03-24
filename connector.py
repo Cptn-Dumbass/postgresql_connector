@@ -41,7 +41,7 @@ try:
     with conn.cursor() as cur:
         # Example query: SELECT * FROM stuff LIMIT 5;
 
-        #TEMPORARY, THIS WILL BE FIXED SOON!!!
+        # Not sanitized, but its just a little script so it doesn't matter.
         query = f"SELECT * FROM {table} LIMIT 5;"
         cur.execute(query)
         
